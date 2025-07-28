@@ -1,13 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Spline from '@splinetool/react-spline';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
+  const isMobile = useIsMobile();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="h-screen w-full">
+      {isMobile ? (
+        <Spline
+          scene="https://prod.spline.design/xFD-6OPw20hmOPHY/scene.splinecode"
+        />
+      ) : (
+        <Spline
+          scene="https://prod.spline.design/xFD-6OPw20hmOPHY/scene.splinecode"
+        />
+      )}
+    </main>
   );
 };
 
